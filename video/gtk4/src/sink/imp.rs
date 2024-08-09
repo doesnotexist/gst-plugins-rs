@@ -299,7 +299,6 @@ impl ElementImpl for PaintableSink {
                             #[cfg(feature = "gtk_v4_14")]
                             gst_video::VideoFormat::Rgbx,
                             #[cfg(feature = "gtk_v4_14")]
-                            gst_video::VideoFormat::Nv12,
                             gst_video::VideoFormat::Xbgr,
                             gst_video::VideoFormat::Bgra,
                             gst_video::VideoFormat::Argb,
@@ -336,6 +335,7 @@ impl ElementImpl for PaintableSink {
                     )))]
                     {
                         const FORMATS: &[gst_video::VideoFormat] = &[
+                            gst_video::VideoFormat::Nv12,
                             gst_video::VideoFormat::Bgra,
                             gst_video::VideoFormat::Argb,
                             gst_video::VideoFormat::Rgba,
