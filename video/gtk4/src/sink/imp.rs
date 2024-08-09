@@ -306,6 +306,7 @@ impl ElementImpl for PaintableSink {
                             gst_video::VideoFormat::Abgr,
                             gst_video::VideoFormat::Rgb,
                             gst_video::VideoFormat::Bgr,
+                            gst_video::VideoFormat::Nv12,
                         ];
 
                         let formats = if features.as_ref().is_some_and(|features| {
