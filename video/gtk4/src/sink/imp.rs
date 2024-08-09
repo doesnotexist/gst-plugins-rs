@@ -1049,7 +1049,7 @@ impl PaintableSink {
             wrapped_context,
             gdk_context: ThreadGuard::new(gdk_context),
         };
-    }r
+    }
 
     #[cfg(feature = "x11egl")]
     fn initialize_x11egl(
