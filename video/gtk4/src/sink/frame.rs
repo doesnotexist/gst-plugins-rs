@@ -53,10 +53,10 @@ impl ops::Deref for VideoInfo {
 
 impl VideoInfo {
     #[cfg(all(target_os = "linux", feature = "dmabuf"))]
-    fn dma_drm(&self) -> Option<&gst_video::VideoInfoDmaDrm> {
+    fn dma_drm(&self) -> Option<gst_video::VideoInfoDmaDrm> {
         match self {
-            VideoInfo::VideoInfo(..) => None,
-            VideoInfo::DmaDrm(info) => Some(info),
+            VideoInfo::VideoInfo(..) => gst_video::VideoInfoDmaDrm::from_video_info(info, 0).ok(),
+            VideoInfo::DmaDrm(info) => Some(info.clone()),
         }
     }
 }
