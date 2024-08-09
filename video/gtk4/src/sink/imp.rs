@@ -299,6 +299,7 @@ impl ElementImpl for PaintableSink {
                             #[cfg(feature = "gtk_v4_14")]
                             gst_video::VideoFormat::Rgbx,
                             #[cfg(feature = "gtk_v4_14")]
+                            gst_video::VideoFormat::Nv12,
                             gst_video::VideoFormat::Xbgr,
                             gst_video::VideoFormat::Bgra,
                             gst_video::VideoFormat::Argb,
@@ -1048,7 +1049,7 @@ impl PaintableSink {
             wrapped_context,
             gdk_context: ThreadGuard::new(gdk_context),
         };
-    }
+    }r
 
     #[cfg(feature = "x11egl")]
     fn initialize_x11egl(
